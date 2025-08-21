@@ -1,0 +1,96 @@
+.team {
+    text-align: center; /* Center align titles and team members */
+    margin: 50px 0; /* Space around the component */
+    padding: 20px; /* Padding for content */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.team-title {
+    font-size: 2.5em; /* Large title size */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.team-header {
+    margin-bottom: 40px; /* Space below header */
+}
+
+.team-subtitle {
+    font-size: 1.8em; /* Subtitle size */
+    margin-bottom: 10px; /* Space below subtitle */
+}
+
+.team-description {
+    font-size: 1.1em; /* Font size for description */
+    max-width: 600px; /* Limit width for better readability */
+    margin: 0 auto; /* Center align */
+    line-height: 1.5; /* Line height for spacing */
+}
+
+.team-members {
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Center members */
+    flex-wrap: wrap; /* Wrap to next line on smaller screens */
+}
+
+.team-member {
+    position: relative; /* Position for absolute child elements */
+    margin: 20px; /* Space between members */
+    width: 200px; /* Fixed width for team members */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.team-photo {
+    width: 25%; 
+    height: 200px; 
+    border-radius: 25%; 
+    object-fit: cover; 
+    transition: transform 0.3s ease; 
+}
+
+.team-member:hover .team-photo {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.member-info {
+    position: absolute; /* Positioning info over image */
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Background for text */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth fade-in */
+    text-align: center; /* Center text */
+}
+
+.team-member:hover .member-info {
+    opacity: 1; /* Show info on hover */
+}
+
+.member-name {
+    font-weight: bold; /* Bold name */
+    display: block; /* Block for new line */
+}
+
+.member-title {
+    font-size: 0.9em; /* Smaller title font */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column; /* Stack members vertically */
+    }
+
+    .team-member {
+        width: 100%; /* Full width for small screens */
+        max-width: 300px; /* Limit max width */
+    }
+
+    .team-description {
+        font-size: 1em; /* Smaller font size */
+    }
+}

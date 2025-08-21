@@ -38,7 +38,7 @@ const Navbar = () => {
               onMouseEnter={handleMouseEnterAbout}
               onMouseLeave={handleMouseLeaveAbout}
             >
-              <Link to="/About">
+              <Link>
                 About
                 <FaChevronDown className={dropdownAboutOpen ? "rotate" : ""} />
               </Link>
