@@ -1,4 +1,4 @@
-/* Logo Styles */
+
 #logo {
     width: 80px; 
     height: 80px; 
@@ -41,7 +41,7 @@
 }
 
 .dropdown-menu {
-    display: flex; 
+    display: none; 
     align-items: center; 
     position: absolute; 
     margin-top: 30px;
@@ -50,6 +50,10 @@
     z-index: 1;
     background-color: inherit;
     border-radius: 5px; 
+} 
+
+.dropdown-menu.show {
+    display: flex; 
 }
 
 .dropdown-menu a {
