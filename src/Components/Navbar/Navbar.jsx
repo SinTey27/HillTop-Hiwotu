@@ -44,9 +44,25 @@ const Navbar = () => {
               </Link>
               {dropdownAboutOpen && (
                 <div className="dropdown-item">
-                  <Link to="/WhoWeAre">Who We Are</Link>
-                  <Link to="/Team">Team</Link>
-                  <Link to="/ImageGallery">Image Gallery</Link>
+                  <Link
+                    to="/WhoWeAre"
+                    smooth={true}
+                    offset={-260}
+                    duration={500}
+                  >
+                    Who We Are
+                  </Link>
+                  <Link to="/Team" smooth={true} offset={-260} duration={500}>
+                    Team
+                  </Link>
+                  <Link
+                    to="/ImageGallery"
+                    smooth={true}
+                    offset={-260}
+                    duration={500}
+                  >
+                    Image Gallery
+                  </Link>
                 </div>
               )}
             </div>
@@ -55,7 +71,7 @@ const Navbar = () => {
               onMouseEnter={handleMouseEnterProjects}
               onMouseLeave={handleMouseLeaveProjects}
             >
-              <Link to="/Projects">
+              <Link>
                 Projects
                 <FaChevronDown
                   className={dropdownProjectsOpen ? "rotate" : ""}
@@ -63,8 +79,22 @@ const Navbar = () => {
               </Link>
               {dropdownProjectsOpen && (
                 <div className="dropdown-item">
-                  <Link to="/RecentlyCompleted">Recently Completed</Link>
-                  <Link to="/Testimonials">Testimonials</Link>
+                  <Link
+                    to="/RecentlyCompleted"
+                    smooth={true}
+                    offset={-260}
+                    duration={500}
+                  >
+                    Recently Completed
+                  </Link>
+                  <Link
+                    to="/Testimonials"
+                    smooth={true}
+                    offset={-260}
+                    duration={500}
+                  >
+                    Testimonials
+                  </Link>
                 </div>
               )}
             </div>
