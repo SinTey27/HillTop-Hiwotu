@@ -1,96 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("../../../assets/team-bg.jpg");
+    background-size: cover;
+    background-position: top center; 
+    background-repeat: no-repeat; 
+}
+
 .team {
-    text-align: center; /* Center align titles and team members */
-    margin: 50px 0; /* Space around the component */
-    padding: 20px; /* Padding for content */
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 8px; /* Rounded corners */
+    text-align: center; 
+    margin: 0; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .team-title {
-    font-size: 2.5em; /* Large title size */
-    margin-bottom: 20px; /* Space below title */
+    font-size: 2.5em; 
+    margin-top: -50px; 
+    color: white; 
 }
 
 .team-header {
-    margin-bottom: 40px; /* Space below header */
+    margin-bottom: 40px; 
 }
 
 .team-subtitle {
-    font-size: 1.8em; /* Subtitle size */
-    margin-bottom: 10px; /* Space below subtitle */
+    font-size: 1.8em; 
+    margin-bottom: 10px; 
+    color: white;
 }
 
 .team-description {
-    font-size: 1.1em; /* Font size for description */
-    max-width: 600px; /* Limit width for better readability */
-    margin: 0 auto; /* Center align */
-    line-height: 1.5; /* Line height for spacing */
+    font-size: 1.1em; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    line-height: 1.5; 
+    color: white; 
 }
 
 .team-members {
-    display: flex; /* Flexbox for layout */
-    justify-content: center; /* Center members */
-    flex-wrap: wrap; /* Wrap to next line on smaller screens */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
 }
 
-.team-member {
-    position: relative; /* Position for absolute child elements */
-    margin: 20px; /* Space between members */
-    width: 200px; /* Fixed width for team members */
-    overflow: hidden; /* Hide overflow */
-    transition: transform 0.3s; /* Smooth hover effect */
+.team_img_container {
+    position: relative;
+    width: 280px; 
+    margin: 10px;
+    overflow: hidden; 
 }
 
-.team-photo {
-    width: 25%; 
-    height: 200px; 
-    border-radius: 25%; 
+.image1 {
+    display: block;
+    width: 100%;
+    height: 280px;
+    border-radius: 25px 0 25px 0;
     object-fit: cover; 
-    transition: transform 0.3s ease; 
 }
 
-.team-member:hover .team-photo {
-    transform: scale(1.1); /* Zoom effect on hover */
-}
-
-.member-info {
-    position: absolute; /* Positioning info over image */
-    bottom: 0; 
+.overlay_staffs {
+    position: absolute;
+    border-radius: 25px 0 25px 0;
+    top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Background for text */
-    color: white; /* Text color */
-    padding: 10px; /* Padding */
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease; /* Smooth fade-in */
-    text-align: center; /* Center text */
+    bottom: 0;
+    opacity: 0;
+    transition: 0.9s ease;
+    background-color: rgba(208, 211, 212, 0.8); 
+    display: flex;
+    align-items: flex-end; 
+    justify-content: flex-start; 
+    padding: 10px; 
+    
 }
 
-.team-member:hover .member-info {
-    opacity: 1; /* Show info on hover */
+.team_img_container:hover .overlay_staffs {
+    opacity: 1;
 }
 
-.member-name {
-    font-weight: bold; /* Bold name */
-    display: block; /* Block for new line */
+.text_staffs {
+    color: black;
+    text-align: left; 
 }
 
-.member-title {
-    font-size: 0.9em; /* Smaller title font */
+.name {
+    font-weight: bolder;
+    margin-bottom: 2px; 
+}
+
+.title {
+    font-weight: lighter;
+    margin-top: 0; 
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .team-members {
-        flex-direction: column; /* Stack members vertically */
-    }
-
-    .team-member {
-        width: 100%; /* Full width for small screens */
-        max-width: 300px; /* Limit max width */
+    .team_img_container {
+        width: 90%; 
     }
 
     .team-description {
-        font-size: 1em; /* Smaller font size */
+        font-size: 1em; 
     }
 }

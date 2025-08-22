@@ -1,31 +1,30 @@
 import React from "react";
-import "./Team.css"; // Don't forget to create this CSS file
+import "./Team.css";
+import Hiwetu from "../../../assets/Hiwetu.jpg";
+import Samuel from "../../../assets/person 1.jfif";
+import Marta from "../../../assets/person 2.jfif";
+import Daniel from "../../../assets/person 3.jfif";
 
 const teamMembers = [
   {
-    name: "Dr. Helen Tesfaye",
-    title: "Lead Strategy Consultant",
-    photo: "../../../assets/person 1.jfif",
+    name: "Hiwotu Kassaw",
+    title: "CEO and Director",
+    photo: Hiwetu,
   },
   {
     name: "Samuel Kebede",
     title: "Senior Business Analyst",
-    photo: "path/to/jane_photo.jpg",
+    photo: Samuel,
   },
   {
     name: "Marta Lemma",
     title: "Training & Capacity Lead",
-    photo: "path/to/alice_photo.jpg",
+    photo: Marta,
   },
   {
     name: "Daniel Getachew",
     title: "Policy & Research Advisor",
-    photo: "path/to/bob_photo.jpg",
-  },
-  {
-    name: "Hiwotu Kassaw",
-    title: "CEO and Director",
-    photo: "path/to/charlie_photo.jpg",
+    photo: Daniel,
   },
 ];
 
@@ -42,11 +41,13 @@ const Team = () => {
       </div>
       <div className="team-members">
         {teamMembers.map((member, index) => (
-          <div className="team-member" key={index}>
-            <img src={member.photo} alt={member.name} className="team-photo" />
-            <div className="member-info">
-              <span className="member-name">{member.name}</span>
-              <span className="member-title">{member.title}</span>
+          <div className="team_img_container" key={index}>
+            <img src={member.photo} alt={member.name} className="image1" />
+            <div className="overlay_staffs">
+              <div className="text_staffs">
+                <h3 className="name">{member.name}</h3>
+                <p className="title">{member.title}</p>
+              </div>
             </div>
           </div>
         ))}
