@@ -1,0 +1,87 @@
+.contact {
+    margin: 40px auto;
+    max-width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-col {
+    flex-basis: 48%;
+    color: #fff;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.contact-col h3 {
+    font-weight: 500;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-col h3 img {
+    width: 90px;
+    margin-left: 10px;
+}
+
+.contact-col p {
+    max-width: 450px;
+    list-style: none; 
+}
+
+.contact-col ul li {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.contact-col ul li img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.contact form input,
+.contact form textarea {
+    display: block;
+    width: 100%;
+    background-color: #e8e8ec;
+    border-radius: 25px 0 25px 0;
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    resize: none;
+}
+
+.contact-col span {
+    display: block;
+    margin: 20px 0;
+}
+
+.sub-btn {
+    margin-top: 20px; 
+    margin-left: 200px;
+    padding: 10px 20px; 
+    background-color: #ffffff; 
+    color: #000; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+.sub-btn:hover {
+    background-color: #000; 
+    color: #fff;
+}
+
+@media (max-width: 700px) {
+    .contact {
+        display: block;
+    }
+
+    .contact-col {
+        padding: 20px;
+    }
+}

@@ -1,9 +1,9 @@
 import React from "react";
 import "./Team.css";
 import Hiwetu from "../../../assets/Hiwetu.jpg";
-import Samuel from "../../../assets/person 1.jfif";
-import Marta from "../../../assets/person 2.jfif";
-import Daniel from "../../../assets/person 3.jfif";
+import Samuel from "../../../assets/person 5.jfif";
+import Marta from "../../../assets/person 7.jfif";
+import Daniel from "../../../assets/person 8.jfif";
 
 const teamMembers = [
   {
@@ -12,7 +12,7 @@ const teamMembers = [
     photo: Hiwetu,
   },
   {
-    name: "Samuel Kebede",
+    name: "Samrawit Kebede",
     title: "Senior Business Analyst",
     photo: Samuel,
   },

@@ -137,3 +137,38 @@ Link{
         right: -200px;
     }
 }
+@media(max-width: 1000px){
+.logo{
+    width: 140px;
+}
+Link{
+ margin: 10px 15px;
+}
+}
+
+@media(max-width: 840px){
+    .header-container{
+        padding: 15px 0;
+    }
+    Link{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #212EA0;
+        z-index: -1;
+        width: 200px;
+        padding-top: 70px;
+        transition: 0.5s;
+    }
+    Link{
+        display: block;
+        margin: 25px 40px;
+    }
+    .menu-icon{
+        display: block;
+        width: 30px;
+        cursor: pointer;
+    }
+   
+} 
