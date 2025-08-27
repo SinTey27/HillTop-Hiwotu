@@ -11,13 +11,19 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
+    setDropdownAboutOpen(false);
+    setDropdownProjectsOpen(false);
   };
 
-  const handleMouseEnterAbout = () => setDropdownAboutOpen(true);
-  const handleMouseLeaveAbout = () => setDropdownAboutOpen(false);
+  const toggleAboutDropdown = () => {
+    setDropdownAboutOpen((prev) => !prev);
+    setDropdownProjectsOpen(false);
+  };
 
-  const handleMouseEnterProjects = () => setDropdownProjectsOpen(true);
-  const handleMouseLeaveProjects = () => setDropdownProjectsOpen(false);
+  const toggleProjectsDropdown = () => {
+    setDropdownProjectsOpen((prev) => !prev);
+    setDropdownAboutOpen(false);
+  };
 
   return (
     <header>
@@ -26,7 +32,13 @@ const Navbar = () => {
           <img src={logo} alt="Company Logo" id="logo" />
         </a>
 
-        <div className="menu-icon" onClick={toggleMenu}>
+        <div
+          className="menu-icon"
+          onClick={toggleMenu}
+          role="button"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+        >
           {isMenuOpen ? "✖" : "☰"}
         </div>
 
@@ -34,41 +46,75 @@ const Navbar = () => {
           className={`dropdown-menu ${isMenuOpen ? "show" : ""}`}
           id="navTabs"
         >
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={toggleMenu} className="nav-link">
+            Home
+          </Link>
           <div
             className="dropdown"
-            onMouseEnter={handleMouseEnterAbout}
-            onMouseLeave={handleMouseLeaveAbout}
+            onMouseEnter={toggleAboutDropdown}
+            onMouseLeave={() => setDropdownAboutOpen(false)}
           >
-            <Link>
+            <div
+              className="nav-link"
+              onClick={() => {
+                toggleAboutDropdown();
+                if (window.innerWidth <= 768) toggleMenu();
+              }}
+              role="button"
+              aria-expanded={dropdownAboutOpen}
+              aria-controls="about-dropdown"
+            >
               About
               <FaChevronDown className={dropdownAboutOpen ? "rotate" : ""} />
-            </Link>
-            {dropdownAboutOpen && (
-              <div className="dropdown-item">
-                <Link to="/WhoWeAre">Who We Are</Link>
-                <Link to="/Team">Team</Link>
-                <Link to="/ImageGallery">Image Gallery</Link>
-              </div>
-            )}
+            </div>
+            <div
+              className={`dropdown-item ${dropdownAboutOpen ? "show" : ""}`}
+              id="about-dropdown"
+            >
+              <Link to="/WhoWeAre" onClick={toggleMenu}>
+                Who We Are
+              </Link>
+              <Link to="/Team" onClick={toggleMenu}>
+                Team
+              </Link>
+              <Link to="/ImageGallery" onClick={toggleMenu}>
+                Image Gallery
+              </Link>
+            </div>
           </div>
           <div
             className="dropdown"
-            onMouseEnter={handleMouseEnterProjects}
-            onMouseLeave={handleMouseLeaveProjects}
+            onMouseEnter={toggleProjectsDropdown}
+            onMouseLeave={() => setDropdownProjectsOpen(false)}
           >
-            <Link>
+            <div
+              className="nav-link"
+              onClick={() => {
+                toggleProjectsDropdown();
+                if (window.innerWidth <= 768) toggleMenu();
+              }}
+              role="button"
+              aria-expanded={dropdownProjectsOpen}
+              aria-controls="projects-dropdown"
+            >
               Projects
               <FaChevronDown className={dropdownProjectsOpen ? "rotate" : ""} />
-            </Link>
-            {dropdownProjectsOpen && (
-              <div className="dropdown-item">
-                <Link to="/RecentlyCompleted">Recently Completed</Link>
-                <Link to="/Testimonials">Testimonials</Link>
-              </div>
-            )}
+            </div>
+            <div
+              className={`dropdown-item ${dropdownProjectsOpen ? "show" : ""}`}
+              id="projects-dropdown"
+            >
+              <Link to="/RecentlyCompleted" onClick={toggleMenu}>
+                Recently Completed
+              </Link>
+              <Link to="/Testimonials" onClick={toggleMenu}>
+                Testimonials
+              </Link>
+            </div>
           </div>
-          <Link to="/Contact">Contact Us</Link>
+          <Link to="/Contact" onClick={toggleMenu} className="nav-link">
+            Contact Us
+          </Link>
         </div>
       </div>
     </header>

@@ -1,11 +1,19 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url("../../../assets/team-bg.jpg");
+   position: fixed;
+    background-image: url('../../../assets/WhoWeAre.jpg'); /* Replace with your actual image URL */
     background-size: cover;
-    background-position: top center; 
-    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;
+    animation: moveBackground 30s linear infinite; 
+    padding-top: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+   /* bottom: -100px; */
 }
 
 .team {
